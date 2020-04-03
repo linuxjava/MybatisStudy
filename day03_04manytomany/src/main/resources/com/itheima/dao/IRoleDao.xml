@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itheima.dao.IRoleDao">
+
+    <!--一对多:查找该用户所有账户-->
+    <!--type应该写user类的权限定类名，之所有可以直接写user，是因为SqlMapConfig.xml中设置了typeAliases-->
+    <resultMap id="roleUserMap" type="role">
+        <id property="id" column="rid"/>
+        <result property="role_name" column="role_name"/>
+        <result property="role_desc" column="role_desc"/>
+        <collection property="users" ofType="user">
+            <id property="id" column="id" />
+            <result property="username" column="username" />
+            <result property="birthday" column="birthday" />
+            <result property="sex" column="sex" />
+            <result property="address" column="address" />
+        </collection>
+    </resultMap>
+
+    <select id="findAll" resultMap="roleUserMap">
+        SELECT
+        r.id rid,
+        r.role_name,
+        r.role_desc,
+        u.*
+        FROM
+        role r
+        LEFT JOIN user_role ur ON r.id = ur.rid
+        LEFT JOIN USER u ON u.id = ur.uid;
+    </select>
+</mapper>

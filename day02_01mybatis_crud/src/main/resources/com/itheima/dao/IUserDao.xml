@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itheima.dao.IUserDao">
+    <!--查询所有-->
+    <select id="findAll" resultType="com.itheima.domain.User">
+        SELECT * FROM user
+    </select>
+
+    <!--插入-->
+    <insert id="saveUser" parameterType="com.itheima.domain.User">
+--       配置获取插入的id
+      <selectKey keyProperty="id" keyColumn="id" resultType="int" order="AFTER">
+        SELECT last_insert_id()
+      </selectKey>
+      INSERT into user(username, address, sex, birthday)VALUES(#{username}, #{address}, #{sex}, #{birthday})
+    </insert>
+
+    <!--更新-->
+    <update id="updateUser" parameterType="com.itheima.domain.User">
+        UPDATE user set username=#{username},address=#{address},sex=#{sex},birthday=#{birthday} WHERE id=#{id}
+    </update>
+
+    <!--删除-->
+    <update id="deleteUser" parameterType="java.lang.Integer">
+--         因为deleteUser只有一个参数，所以这里的uid只是一个占位符，名字可以随便写
+        DELETE FROM user WHERE id=#{uid}
+    </update>
+
+    <!--通过id查找-->
+    <select id="findById" parameterType="int" resultType="com.itheima.domain.User">
+        SELECT * from user WHERE id=#{uid}
+    </select>
+
+    <!--模糊查找(推荐)-->
+    <select id="findByName" parameterType="string" resultType="com.itheima.domain.User">
+        SELECT * FROM user WHERE username LIKE #{name}
+    </select>
+
+    <!--另一种模糊查询，占位符必须要用value(不推荐使用此方式)-->
+    <select id="findByName1" parameterType="string" resultType="com.itheima.domain.User">
+        SELECT * FROM user WHERE username LIKE '%${value}%'
+    </select>
+
+    <!--查询总记录-->
+    <select id="count" resultType="long">
+        SELECT COUNT(*) FROM user
+    </select>
+
+    <!--使用条件对象进行模糊查找-->
+    <select id="findByVo" parameterType="com.itheima.domain.QueryVo" resultType="com.itheima.domain.User">
+        SELECT * FROM user WHERE username LIKE #{user.username}
+    </select>
+
+</mapper>

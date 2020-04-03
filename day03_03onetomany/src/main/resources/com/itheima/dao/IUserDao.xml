@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itheima.dao.IUserDao">
+
+    <!--一对多:查找该用户所有账户-->
+    <!--type应该写user类的权限定类名，之所有可以直接写user，是因为SqlMapConfig.xml中设置了typeAliases-->
+    <resultMap id="userAccountMap" type="user">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="birthday" column="birthday"/>
+        <result property="sex" column="sex"/>
+        <result property="address" column="address"/>
+        <collection property="accounts" ofType="account">
+            <id property="id" column="aid" />
+            <result property="uid" column="uid" />
+            <result property="money" column="money" />
+        </collection>
+    </resultMap>
+
+    <select id="findAll" resultMap="userAccountMap">
+        select
+        u.*,
+        a.id aid,
+        a.uid,
+        a.money
+        from user u
+        left outer join account a
+        on u.id = a.uid
+    </select>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itheima.dao.IAccountDao">
+
+    <!--一对一:查找该账户对应的用户信息-->
+
+    <!--方式1：传统方式-->
+    <select id="findAccountUser" resultType="com.itheima.domain.AccountUser">
+        SELECT a.*,u.`username`,u.`address` FROM account a, USER u WHERE u.id = a.uid;
+    </select>
+
+    <!-- 方式2：实体类建立关联(推荐) -->
+    <!-- 定义封装account和user的resultMap -->
+    <!--注意:这里给a.id起别名为aid，否则account表和user表中都包含id，查询出来的数据会有问题-->
+    <resultMap id="accountUserMap" type="com.itheima.domain.Account">
+        <id property="id" column="aid"/>
+        <result property="uid" column="uid"/>
+        <result property="money" column="money"/>
+        <!-- 一对一的关系映射：配置封装user的内容-->
+        <association property="user" javaType="com.itheima.domain.User">
+            <id property="id" column="id"/>
+            <result column="username" property="username"/>
+            <result column="address" property="address"/>
+            <result column="sex" property="sex"/>
+            <result column="birthday" property="birthday"/>
+        </association>
+    </resultMap>
+
+    <select id="findAll" resultMap="accountUserMap">
+        select u.*,a.id as aid,a.uid,a.money from account a , user u where u.id = a.uid
+    </select>
+</mapper>
