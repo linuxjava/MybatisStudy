@@ -12,7 +12,6 @@
         <module>../day01_02mybatis_annotation</module>
         <module>../day03_03onetomany</module>
         <module>../day03_05jndi</module>
-        <module>../test123</module>
         <module>../day04_01lazy</module>
         <module>../day04_02cache</module>
     </modules>

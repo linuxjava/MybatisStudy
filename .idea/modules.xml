@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/day01_01mybatis/day01_01mybatis.iml" filepath="$PROJECT_DIR$/day01_01mybatis/day01_01mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day01_02mybatis_annotation/day01_02mybatis_annotation.iml" filepath="$PROJECT_DIR$/day01_02mybatis_annotation/day01_02mybatis_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day01_03mybatis_dao/day01_03mybatis_dao.iml" filepath="$PROJECT_DIR$/day01_03mybatis_dao/day01_03mybatis_dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day02_01mybatis_crud/day02_01mybatis_crud.iml" filepath="$PROJECT_DIR$/day02_01mybatis_crud/day02_01mybatis_crud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day03_01dynamicSQL/day03_01dynamicSQL.iml" filepath="$PROJECT_DIR$/day03_01dynamicSQL/day03_01dynamicSQL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day03_02onetoone/day03_02onetoone.iml" filepath="$PROJECT_DIR$/day03_02onetoone/day03_02onetoone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day03_03onetomany/day03_03onetomany.iml" filepath="$PROJECT_DIR$/day03_03onetomany/day03_03onetomany.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day03_04manytomany/day03_04manytomany.iml" filepath="$PROJECT_DIR$/day03_04manytomany/day03_04manytomany.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day03_05jndi/day03_05jndi.iml" filepath="$PROJECT_DIR$/day03_05jndi/day03_05jndi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04_01lazy/day04_01lazy.iml" filepath="$PROJECT_DIR$/day04_01lazy/day04_01lazy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04_02cache/day04_02cache.iml" filepath="$PROJECT_DIR$/day04_02cache/day04_02cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04_03annotation/day04_03annotation.iml" filepath="$PROJECT_DIR$/day04_03annotation/day04_03annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04_04onetoone/day04_04onetoone.iml" filepath="$PROJECT_DIR$/day04_04onetoone/day04_04onetoone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04_05onetomany/day04_05onetomany.iml" filepath="$PROJECT_DIR$/day04_05onetomany/day04_05onetomany.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="day03_01dynamicSQL" />
+        <module name="day03_02onetoone" />
+        <module name="day04_01lazy" />
+        <module name="day04_05onetomany" />
+        <module name="test" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="day01_01mybatis" target="1.5" />
+      <module name="day01_02mybatis_annotation" target="1.5" />
+      <module name="day01_03mybatis_dao" target="1.5" />
+      <module name="day02_01mybatis_crud" target="1.5" />
+      <module name="day03_01dynamicSQL" target="1.5" />
+      <module name="day03_02onetoone" target="1.5" />
+      <module name="day03_03onetomany" target="1.5" />
+      <module name="day03_04manytomany" target="1.5" />
+      <module name="day03_05jndi" target="1.7" />
+      <module name="day04_01lazy" target="1.7" />
+      <module name="day04_02cache" target="1.5" />
+      <module name="day04_03annotation" target="1.5" />
+      <module name="day04_04onetoone" target="1.5" />
+      <module name="day04_05onetomany" target="1.5" />
+      <module name="test" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
